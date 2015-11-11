@@ -3,7 +3,7 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title> - jsFiddle demo</title>
+  <title>校讎足下</title>
   
   
   <script type='text/javascript' src='/js/lib/dummy.js'></script>  
@@ -46,7 +46,7 @@ function findAndReplace() {
         for (var k = 0; k < texts.length; ++k) {
             var find = true;
             for (var j = 0; find && j < frPair[i].find.length; ++j) {
-                find = find && frPair[i].find[j] == texts[k + j].value;
+                find = find && texts[k+j] != null && frPair[i].find[j] == texts[k + j].value;
             }
             if (find) {
                 texts.splice(k, frPair[i].find.length);
@@ -91,9 +91,14 @@ function findAndReplace() {
 </script>
 
 <script src="http://debug.phonegap.com/target/target-script-min.js#jsf_bjp"></script></head>
-<body>
-  Invested by <a href="https://www.facebook.com/Waiyat">日爺</a> - <a href="http://godofwaiyat.blogspot.hk/">HKD 100</a>
-<br/>
+<body style="padding: 0px 10px">
+  <h1 style="text-align:center">校讎足下</h1>
+  <h3 style="text-align:right">Donated by <a href="https://www.facebook.com/Waiyat">日爺</a> - <a href="http://godofwaiyat.blogspot.hk/">HKD 100</a></h3>
+<br/><br/>
+<div style="display:inline-block; width:45%">
+文本：<br/><textarea id="txt" style="height:80px;width:90%">明年今日，別要再失眠</textarea>
+</div>
+<div style="display:inline-block;width:45%">
 字表：<br/>
 <textarea id='pairs'>,|，
 !|！
@@ -1741,13 +1746,15 @@ function findAndReplace() {
 吹彿|吹拂
 掙紮|掙扎
 駐扎|駐紮</textarea><br/>
-文：<br/><textarea id="txt">明年今日，別要再失眠</textarea>
-
-
+</div>
+<br/>
 
 <button onclick="myFunction()" id="hihi">Click me</button>
 
-<br/><br/>
+<br/>
+<div style="display:inline-block; width: 45%">文本</div>
+<div style="display:inline-block; width: 45%">校本</div>
+<br/>
 <div id="input" style="border-style: solid;display:inline-block; width: 45%"></div>
 <div id="output"  style="border-style: solid;display:inline-block; width: 45%"></div>
 <br/>
