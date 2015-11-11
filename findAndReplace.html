@@ -92,7 +92,8 @@ function findAndReplace() {
         	outputStr += "</span>";
         	startSpan = 0;
         }
-        if ( i > 0 && texts[i-1].highlighted != texts[i].highlighted && texts[i].highlighted != -1 ) {
+        if ( ( i > 0 && texts[i-1].highlighted != texts[i].highlighted && texts[i].highlighted != -1 ) ||
+        	 ( texts[i].highlighted != -1 ) ) {
             outputStr += "<span class='highlight' id='"+replaceId+"' onclick='tooltip.pop(this,popup("+replaceId+","+texts[i].highlighted+"))'>";
             replaceId ++;
             startSpan = 1;
