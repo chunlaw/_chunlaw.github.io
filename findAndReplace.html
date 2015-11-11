@@ -19,8 +19,8 @@
 
 <script type='text/javascript'>//<![CDATA[
 checkedfrPair = [];
-function popup(element,i){
-	return "<p><button onclick=''>"+checkedfrPair[i].find+"</button> -> <button onclick='replace(element,checkedfrPair[i].replace)'>"+checkedfrPair[i].replace+"</button></p>";
+function popup(id,i){
+	return "<p><button onclick='document.getElementById("+id+").innerHTML="+'"'+checkedfrPair[i].find+'"'+"'>"+checkedfrPair[i].find+"</button> -> <button onclick='document.getElementById("+id+").innerHTML="+'"'+checkedfrPair[i].replace+'"'+"'>"+checkedfrPair[i].replace+"</button></p>";
 }
 
 window.onload=function(){
@@ -80,6 +80,7 @@ function findAndReplace() {
     outputBox = document.getElementById('output');
     outputStr = '<p>';
     var startSpan = 0;
+    replaceId = 0;
     for (var i = 0, len = texts.length; i < len; i++) {
         if (texts[i].value == '\n')
         {
@@ -92,7 +93,8 @@ function findAndReplace() {
         	startSpan = 0;
         }
         if ( i > 0 && texts[i-1].highlighted != texts[i].highlighted && texts[i].highlighted != -1 ) {
-            outputStr += "<span class='highlight' onclick='tooltip.pop(this,popup(this,"+texts[i].highlighted+"))'>";
+            outputStr += "<span class='highlight' id='"+replaceId+"' onclick='tooltip.pop(this,popup("+replaceId+","+texts[i].highlighted+"))'>";
+            replaceId ++;
             startSpan = 1;
         }
 
