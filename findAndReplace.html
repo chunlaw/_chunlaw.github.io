@@ -60,8 +60,20 @@ function findAndReplace() {
         }
     }
 
+    orgBox = document.getElementById('input');
+    orgBox.innerHTML = "<p>";
+    for (var i = 0, len = str.length; i < len; i++) {
+    	if (str[i] == '\n')
+    	{
+            orgBox.innerHTML += "</p><p>";
+    	} else {
+            orgBox.innerHTML += str[i];
+        }
+    }
+    orgBox.innerHTML += "</p>";
+
     outputBox = document.getElementById('output');
-    outputBox.innerHTML = "<p>";
+    outputBox.innerHTML = '<p>';
     for (var i = 0, len = texts.length; i < len; i++) {
     	if (texts[i].value == '\n')
     	{
@@ -1736,7 +1748,8 @@ function findAndReplace() {
 <button onclick="myFunction()" id="hihi">Click me</button>
 
 <br/><br/>
-<div id="output"></div>
+<div id="input" style="border-style: solid;display:inline-block; width: 45%"></div>
+<div id="output"  style="border-style: solid;display:inline-block; width: 45%"></div>
 <br/>
   
 </body>
