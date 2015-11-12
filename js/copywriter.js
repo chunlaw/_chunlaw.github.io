@@ -1,17 +1,10 @@
 checkedfrPair = [];
 
-function popup(id,i){
-	var ret = "<p><button onclick='document.getElementById("+id+").innerHTML="+'"'+checkedfrPair[i].find+'"'+"'>"+checkedfrPair[i].find+"</button> -> <button onclick='document.getElementById("+id+").innerHTML="+'"'+checkedfrPair[i].replace+'"'+"'>"+checkedfrPair[i].replace+"</button></p>";
-	if ( checkedfrPair[i].remark != null )
-		ret += "<p>"+checkedfrPair[i].remark+"</p>";
-	return ret;
-}
-
-function findAndReplace() {
-    var texts = [];
-    var frPair = [];
-    var lines = document.getElementById('pairs').value.split('\n');
+function defineFrPair ( frPair, pairsText ) {
+    lines = pairsText.split('\n');
     for (var i = 0; i < lines.length; i++) {
+        if ( lines[i] == "" )
+            continue;
     	var tokens = lines[i].split('|');
         var find = tokens[0];
         var replace = tokens[1];
@@ -22,6 +15,38 @@ function findAndReplace() {
             remark: remark
         });
     }
+}
+
+function httpGetFrPairList(theUrl)
+{
+    if ( theUrl == "" ) {
+        return "";
+    }
+    if ( localStorage.getItem(theUrl) != null ) {
+        return localStorage.getItem (theUrl);
+    }
+    var client = new XMLHttpRequest();
+    client.open('GET', theUrl, false);
+    client.send();
+    if ( client.status == 200 ) {
+        localStorage.setItem(theUrl, client.responseText);
+        return client.responseText;
+    }
+}
+
+function popup(id,i){
+	var ret = "<p><button onclick='document.getElementById("+id+").innerHTML="+'"'+checkedfrPair[i].find+'"'+"'>"+checkedfrPair[i].find+"</button> -> <button onclick='document.getElementById("+id+").innerHTML="+'"'+checkedfrPair[i].replace+'"'+"'>"+checkedfrPair[i].replace+"</button></p>";
+	if ( checkedfrPair[i].remark != null )
+		ret += "<p>"+checkedfrPair[i].remark+"</p>";
+	return ret;
+}
+
+function findAndReplace() {
+    var texts = [];
+    var frPair = [];
+    var lines = document.getElementById('pairs').value;
+    defineFrPair ( frPair, httpGetFrPairList(document.getElementById('frPairUrl').value) );
+    defineFrPair ( frPair, lines );
     checkedfrPair = frPair;
     str = document.getElementById('txt').value;
     for (var i = 0, len = str.length; i < len; i++) {
