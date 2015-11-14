@@ -29,8 +29,9 @@ function httpGet(theUrl)
     client.send();
 }
 window.onload=function(){
-    document.getElementById('runButton').onclick = findAndReplace;
-    document.getElementById('runButton').onclick();
+    document.getElementById('pairs').placeholder = '用法：\n一行行輸入要編校的詞語、置換成的詞語及簡單備考\n分別以「|」( Shift + \\ ) 分隔\n\n例子：\n滄海一栗|滄海一粟|大海裏的一粒穀子。比喻非常渺小';
+    document.getElementById('runButton').onclick = function () { return findAndReplace('cp_input', 'cp_output', 'pairs', 'frPairUrl', 'txt'); } ;
+    document.getElementById('runButton').onclick('cp_input', 'cp_output', 'pairs', 'frPairUrl', 'txt');
 }
 </script>
 

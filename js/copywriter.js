@@ -41,14 +41,14 @@ function popup(id,i){
 	return ret;
 }
 
-function findAndReplace() {
+function findAndReplace( orgTextBoxId, outputTextBoxId, pairsBoxId, urlId, inputTextBoxId ) {
     var texts = [];
     var frPair = [];
-    var lines = document.getElementById('pairs').value;
-    defineFrPair ( frPair, httpGetFrPairList(document.getElementById('frPairUrl').value) );
+    var lines = document.getElementById(pairsBoxId).value;
+    defineFrPair ( frPair, httpGetFrPairList(document.getElementById(urlId).value) );
     defineFrPair ( frPair, lines );
     checkedfrPair = frPair;
-    str = document.getElementById('txt').value;
+    str = document.getElementById(inputTextBoxId).value;
     for (var i = 0, len = str.length; i < len; i++) {
         texts.push({
             highlighted: "-1",
@@ -85,7 +85,7 @@ function findAndReplace() {
         }
     }
     orgStr += "</p><p></p>";
-    document.getElementById('cp_input').innerHTML = orgStr;
+    document.getElementById(orgTextBoxId).innerHTML = orgStr;
 
     var outputStr = '<p>';
     var startSpan = 0;
@@ -111,6 +111,6 @@ function findAndReplace() {
         
     }
     outputStr += "</p><p></p>";
-    document.getElementById('cp_output').innerHTML = outputStr;
+    document.getElementById(outputTextBoxId).innerHTML = outputStr;
 }
 
