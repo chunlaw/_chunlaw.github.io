@@ -1,0 +1,25 @@
+body {
+    background: #ddd
+}
+
+h1, h2, h3, h4, .menu-bar {
+    text-align: center
+}
+
+.menu-bar a {
+    text-decoration: none
+}
+
+.menu-bar a:hover {
+    text-decoration: underline
+}
+
+#legendDiv, #chart {
+    display: inline-block;
+    vertical-align: top
+}
+
+#chart-wrapper{
+    width: 75%;
+    margin: 0 auto
+}

@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Bar Chart</title>
+        <link href="css/chart.css" rel="stylesheet" type="text/css" />
+        <link href="css/districtElection.css" rel="stylesheet" type="text/css" />
+        <script src="js/Chart.min.js"></script>
+        <script src="districtElectionData/data.js"></script>
+    </head>
+    <body>
+        <h1>街工區議會選舉得票資料（2003-2015）</h1>
+        <div class="menu-bar">
+            <a href="#" onclick='showLineChart(NWSCPercentElectionData, "街工整合總支持度", true)'>街工各區整合總支持度</a>
+            <a href="#" onclick='showLineChart(NWSCElectionData, "街工總票數")'>街工總票數</a>
+            <br/>
+            <a href="#" onclick='showBarChart(KFElectionData,"葵芳")'>葵芳</a>
+            <a href="#" onclick='showBarChart(KHElectionData,"葵興")'>葵興</a>
+            <a href="#" onclick='showBarChart(KSEElectionData,"葵盛東")'>葵盛東</a>
+            <a href="#" onclick='showBarChart(KCNElectionData,"葵涌北")'>葵涌北</a>
+            <a href="#" onclick='showBarChart(KCSElectionData,"葵涌南")'>葵涌南</a>
+            <a href="#" onclick='showBarChart(KSWElectionData,"葵盛西")'>葵盛西</a>
+            <a href="#" onclick='showBarChart(SYElectionData,"石蔭")'>石蔭</a>
+            <a href="#" onclick='showBarChart(OYElectionData,"安蔭")'>安蔭</a>
+            <a href="#" onclick='showBarChart(SPKElectionData,"新蒲崗")'>新蒲崗</a>
+            <a href="#" onclick='showBarChart(CKElectionData,"晴景")'>晴景</a>
+        </div>
+        <hr/>
+        <h2 id="chart-title"></h2>
+        <div id="chart-wrapper">
+            <div id="chart">
+                <canvas id="canvas" height="450" width="600"></canvas>
+            </div>
+            <div id="legendDiv" class="chart-legend"></div>
+        </div>
+
+
+    <script>
+        function showBarChart(chart, title){
+            var ctx = document.getElementById("canvas").getContext("2d");
+            if ( window.myChart != null ){
+                window.myChart.destroy();
+            }
+            document.getElementById("chart-title").innerHTML = title;
+            window.myChart = new Chart(ctx).Bar(chart, barChartOptions);
+            document.getElementById("legendDiv").innerHTML = window.myChart.generateLegend();
+        }
+        function showLineChart(chart, title, inPercentage){
+            var ctx = document.getElementById("canvas").getContext("2d");
+            if ( window.myChart != null ){
+                window.myChart.destroy();
+            }
+            document.getElementById("chart-title").innerHTML = title;
+            window.myChart = new Chart(ctx).Line(chart, lineChartOptions(inPercentage));
+            document.getElementById("legendDiv").innerHTML = '';//window.myLine.generateLegend();
+
+        }
+        window.onload = showLineChart(NWSCPercentElectionData, "街工整合各區總支持度", true);
+    </script>
+    </body>
+</html>
