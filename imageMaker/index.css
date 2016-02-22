@@ -220,3 +220,31 @@ div.upload-field {
 	width: 200px;
 	margin: 0 auto;
 }
+
+#donezerozero-html-container div.subtitle-3 {
+    position: absolute;
+    width: 661px;
+    top: 370px;
+    left: -1px;
+    padding: 42px;
+    padding-top: 16px;
+    font-size: 62px;
+    line-height: 62px;
+    text-shadow: 2px 2px #000;
+    color: #FFFFFF;
+    background-color: rgba(218, 17, 54, 0.43);
+}
+
+#donezerozero-html-container div.likeshare-3 {
+    position: absolute;
+    width: 560px;
+    top: 583px;
+    left: -202px;
+    padding: 15px;
+    font-size: 26px;
+    font-weight: bolder;
+    text-shadow: 2px 2px #000;
+    color: #D7CE1C;
+    z-index: 100;
+}
+
