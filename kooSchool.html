@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geocoding service</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+#floating-panel {
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+    </style>
+  </head>
+  <body>
+    <div id="floating-panel">
+      <input id="address" type="textbox" value="Sydney, NSW">
+      <input id="submit" type="button" value="Geocode">
+    </div>
+    <div id="map"></div>
+    <script>
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: {lat: 36, lng: 100}
+  });
+  var geocoder = new google.maps.Geocoder();
+  /*
+  */
+  $.getJSON(
+    "https://script.google.com/macros/s/AKfycbwJHg5FoTNKWXOI83XMuhLGJn8MnsLW6uhyHX9KXpYVteTnWnfQ/exec?id=11kkQXJSLlZMATI_l_42F7PWgfLzQhxhH4dBIMX2AyAI&sheet=sheet1",
+    function ( data ){
+      $.each(data.sheet1, function(k,v){  
+        setTimeout(function(){geocodeAddress(geocoder, map, v['地址'], v['新校名稱']);},k*1000);
+      });
+      console.log('finish');
+    }
+  );
+  
+}
+
+function geocodeAddress(geocoder, resultsMap, address, title) {
+  // var address = document.getElementById('address').value;
+  geocoder.geocode({'address': address}, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      //resultsMap.setCenter(results[0].geometry.location);
+      
+      var marker = new google.maps.Marker({
+        map: resultsMap,
+        position: results[0].geometry.location
+      });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+      console.log(address);
+    }
+  });
+}
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAngbZCQ8OO8MKHUwdRh-WoiMXwQgy5oRU&signed_in=true&callback=initMap"
+        async defer></script>
+  </body>
+</html>
