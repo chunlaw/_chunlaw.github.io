@@ -1,0 +1,130 @@
+.background {
+    position: relative;
+    background: url("../img/background.jpg");
+    height: 100%;
+    width: 100%;
+    background-size: 120%;
+    background-repeat: no-repeat;
+    background-position: 70% 0;
+}
+.background > div {
+    position: absolute
+}
+
+.name {
+    background: url('../img/name.png');
+    height: 128px;
+    width: 370px;
+    top: 20px;
+}
+
+.solgan {
+}
+
+.app {
+    background: url('../img/app.png');
+    height: 300px;
+    width: 150px;
+    top: 130px;
+    left: 5%;
+}
+
+.android{
+    background: url('../img/android.png');
+    height: 58px;
+    width: 176px;
+    background-repeat: no-repeat;
+    top: 240px;
+    left: 210px
+}
+
+.ios {
+    background: url('../img/ios.png');
+    height: 58px;
+    width: 176px;
+    background-repeat: no-repeat;
+    top: 320px;
+    left: 210px
+}
+
+.ribbon {
+    background: url('../img/ribbon.png') no-repeat;
+    height: 300px;
+    width: 300px;
+    display: none;
+}
+
+.slogan {
+    width: 141px;
+    color: #e7e7e7;
+    text-align: center;
+    font-size: 1.2em;
+    letter-spacing: 0.5em;
+    line-height: 3em;
+    top: 10%;
+    right: 25%;
+    font-weight: bold;
+}
+
+.slogan hr {
+    background-image:url('../img/word2.png');
+    border: none;
+    height: 3px;
+    width: 121px;
+    margin: 0 auto;
+    background-repeat: no-repeat
+}
+
+.bottom-line {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.59);
+    bottom: 85px;
+    padding: 3px 0;  
+	vertical-align: text-bottom
+}
+
+.bottom-line .left {
+    width: 70%;
+    display: inline-block;
+}
+
+.bottom-line .right {
+    text-align:right;
+    display: inline-block
+}
+
+.bottom-line .text {
+	line-height: 1;
+	color: #5A072A;
+	font-size: 3em;
+	font-weight: bold;
+	padding: 13px 0;
+}
+.bottom-line .link {
+	line-height: 1;
+    background: rgba(99, 0, 0, 0.71);
+    font-size: 2em;
+    color: white;
+    padding: 15px;	
+}
+
+.bottom-line .link a, .bottom-line .link a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+.cro {
+    background:url('../img/cro.png') no-repeat;
+    background-size: cover;
+    height:90px;
+    width: 125px;
+	display: inline-block;
+}
+
+.kf {
+    background:url('../img/kf.png') no-repeat;
+    background-size: cover;
+    height:100px;
+    width: 100px;
+	display: inline-block;
+}

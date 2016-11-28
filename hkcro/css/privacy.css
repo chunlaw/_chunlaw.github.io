@@ -1,0 +1,7 @@
+textarea.policy {
+    width: 98%;
+    height: 350px;
+    max-height: 350px;
+    resize: none;
+    color: #666
+}

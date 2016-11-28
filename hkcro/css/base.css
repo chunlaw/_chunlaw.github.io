@@ -1,0 +1,89 @@
+/* Style for our header texts
+* --------------------------------------- */
+body {
+    font-family: Heiti TC, Microsoft JhengHei, futura, arial, Hei, sans-serif;
+    background: #E7E7E7;
+
+}
+.box-container{
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+}
+h1{
+    font-size: 2em;
+    font-family: arial,helvetica;
+    margin:0;
+    padding:0;
+}
+
+/* Centered texts in each section
+* --------------------------------------- */
+.section{
+    text-align:left;
+    font-size: 0.8em;
+    line-height: 1.3em
+}
+
+/* Fixed header and footer.
+* --------------------------------------- */
+#header, #footer{
+    position:fixed;
+    height: 50px;
+    display:block;
+    width: 100%;
+    background: #333;
+    z-index:9;
+    text-align:center;
+    color: #f2f2f2;
+    padding: 20px 0;
+}
+
+#header{
+    top:0px;
+}
+#footer{
+    bottom:0px;
+}
+
+
+/* Bottom menu
+* --------------------------------------- */
+#infoMenu {
+    bottom: 80px;
+}
+#infoMenu li a {
+    color: #fff;
+    z-index: 999;
+}
+
+#footer {
+    background-color: #06083D;
+}
+
+#footer > div {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 20px
+}
+
+#footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}
+
+#footer .logo {
+    background: url('../img/JIH-01.jpg');
+    background-size: cover;
+    height: 60px;
+    width: 60px;
+    padding: 0px;
+}
+
+.section {
+    color: #5E6081
+}
