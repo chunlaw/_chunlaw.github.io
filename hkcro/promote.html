@@ -3,6 +3,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>流動公義 - Justice In Hand</title>
 	<meta name="author" content="HKCRO" />
 	<meta name="description" content="" />
@@ -16,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="css/privacy.css" />
     <link rel="stylesheet" type="text/css" href="css/right.css" />
     <link rel="stylesheet" type="text/css" href="css/faq.css" />
+    <link rel="stylesheet" type="text/css" href="css/menu.css" />
 	<style>
 
 
@@ -32,6 +34,7 @@
 
 	<script type="text/javascript" src="fullpage/scrolloverflow.js"></script>
 	<script type="text/javascript" src="fullpage/jquery.fullPage.min.js"></script>
+    <script type="text/javascript" src="js/meanmenu.js"></script>
     <script type="text/javascript" src="js/init.js"></script>
 
 	<script type="text/javascript">
@@ -39,36 +42,42 @@
             setPrivcyTextarea();
 			$('#fullpage').fullpage({
 				anchors: ['top', 'run', 'privacy', 'right', 'faq', 'aboutus', 'donation'],
-				//sectionsColor: ['#000', '#1BBC9B', '#7E8F7C', '#000', '#000', '#000'],
-                scrollOverflow: true,
                 normalScrollElements: 'textArea.policy',
 				css3: true,
-                paddingBottom: '90px'
+                paddingBottom: '60px',
+				autoScrolling: false,
+				fitToSection: false,
+				fitToSectionDelay: 0,
+				verticalCentered: true,
 			});
+            jQuery('header nav').meanmenu();
 		});
 	</script>
 
 </head>
 <body>
     <!-- HEADER -->
-    <div id="footer">
+    <header id='header'>
         <div class="logo"></div>
-        <div class="sect1"><a href="#top">Justice in Hand - 流動公義</a></div>
-        <div class="sect2"><a href="#run">如何運作</a></div>
-        <div class="sect3"><a href="#privacy">私穩政策</a></div>
-        <div class="sect4"><a href="#right">你的權利</a></div>
-        <div class="sect5"><a href="#faq">FAQ</a></div>
-        <div class="sect6"><a href="#aboutus">關於我們</a></div>
-        <div class="sect7"><a href="#donation">捐款支持</a></div>
-    </div>
-    <div id="header" style="display: none">Footer</div>
+        <nav>
+            <ul>
+                <li class="sect1"><span><a href="#top">Justice in Hand - 流動公義</a></span></li>
+                <li class="sect2"><span><a href="#run">如何運作</a></span></li>
+                <li class="sect3"><span><a href="#privacy">私穩政策</a></span></li>
+                <li class="sect4"><span><a href="#right">你的權利</a></span></li>
+                <li class="sect5"><span><a href="#faq">FAQ</a></span></li>
+                <li class="sect6"><span><a href="#aboutus">關於我們</a></span></li>
+                <li class="sect7"><span><a href="#donation">捐款支持</a></span></li>
+            </ul>
+        </nav>
+    </header>
 
 <div class="box-container">
 
 <!-- full page -->
 <div id="fullpage">
 	<div class="section " id="section0">
-        <div class="background">
+        <div class="background intro">
             <div class="name"></div>
             <div class="slogan">唔使再怕<hr>手臂的延伸</div>
             <div class="app"></div>
@@ -78,7 +87,7 @@
             <div class="bottom-line">
                 <div class="left">
                     <div class="text">《流動公義》測試版公開﹗</div>
-                    <div class="link">立即下載：<a href="http://onelink.to/justiceinhand">http://onelink.to/justiceinhand</a></div>
+                    <!--<div class="link">立即下載：<a href="http://onelink.to/justiceinhand">http://onelink.to/justiceinhand</a></div>-->
                 </div>
                 <div class="right" >
                     <div class="cro"></div>
@@ -109,9 +118,11 @@
 
 	<div class="section" id="section2">
 	    <div class="slide" id="slide1">
-			<h1>私穩政策</h1>
-            <p></p>
-            <textarea class="policy" readonly></textarea>
+			<div class="intro">
+				<h1>私穩政策</h1>
+				<p></p>
+				<textarea class="policy" readonly></textarea>
+			</div>
 		</div>
 	</div>
 
@@ -155,18 +166,23 @@
 			<p>問： 現在用智能手機拍片十分普及，為何要使用「流動公義」？</p>
 			<p>答： 用智能手機直接拍片，當然也可以拍下濫權行為，但假若執法人員發現您正在拍攝，可能會強行把你的手機片段刪除。「流動公義」的拍攝功能可以讓令你拍下的影像直接加密傳送至海外伺服器，確保片段獲得保留。</p>
 			<p>同時，拍攝者可透過「流動公義」提供聯絡資料和報告，令民權觀察可以為受害者提供協助，以及將資料整合成人權報告。</p>
+            <hr>
 			<p>問： 現時 Faecbook 已經有直播功能，市民可以即時將執法人員的濫權行為公開。為什麼要使用「流動公義」？</p>
 			<p>答： 民權觀察注意到警方可能會透過網上的公開影片去了解案情、追尋涉事人士，甚至以網上影片作為檢控的證據。民權觀察認為市民如要將拍攝的影片於網上廣播(特別是示威活動)，必須考慮上述因素。</p>
 			<p>流動公義可以協助市民以有系統的方式記錄執法人員的濫權行為，增加申訴成功的機會。民權觀察並會將濫權個案整合成人權報告及作出改善建議，以改善執法人員的濫權行為。</p>
+            <hr>
 			<p>問： 我拍攝的片段會否反成為警方控告示威者的證據？</p>
 			<p>答： 民權觀察會盡力反對政府或執法部門的任何索取資料要求。我們並將流動公義的伺服器設於境外，以及以「不儲存缓存」的方式讀取伺服器的資料，以防止政府或執法部門以流動公義的任何資料作檢控或收集情報的用途。</p>
+            <hr>
 			<p>問： 民權觀察如何確保我傳送的片段絕對保密？</p>
 			<p>答： 由於用戶拍攝的影像具有敏感的資料，「流動公義」會以加密的方式將你拍攝的影像和報告以加密方式傳送至海外伺服器，而我們的伺服器亦會以加密的方式儲存有關資料。</p>
 			<p>我們亦會就閱覽和審核影像內容設立嚴謹機制和程序，只有民權觀察獲授權人士才可以閱覽相關影像，每次內部閱覽和跟進影像內容都會有嚴格紀錄。</p>
 			<p>問： 誰會看到我傳送的片段？</p>
 			<p>答： 只有民權觀察獲授權的成員才可閱覽你提供的影像和報告，以決定是否需要就影像內容作跟進。民權觀察會對閱覽影像及報告進行記錄，並在指定機制的批准下，才能下載伺服器的資料。</p>
+            <hr>
 			<p>問： 民權觀察會永久保留我的片段嗎？</p>
 			<p>答： 不會。假若你提供的影像和報告毋須任何跟進，有關資料將於三十一日後刪除。</p>
+            <hr>
 			<p>問： 民權觀察會把我拍攝了的影像公開嗎？</p>
 			<p>答： 如我們認為需要把影像公開以追究執法人員一項嚴重的濫權行為，或有影像內涉事的市民要求我們提供與他有關的影像作申訴或法律行動之用，我們會考慮向公眾，或向影像內的涉事市民披露你拍攝的影像。而民權觀察亦可能會在遮蓋影像內的市民的面容後，將有關影像用於人權倡議及製作報告的用途。<span><br /> </span></p>
 			<p>民權觀察強調，在使用任何的影像及報告前，我們會尋求由專業法律人士組成的「顧問委員會」作出批准，確保披露影像及報告的方式不會對影像內涉及的市民有任何不利的法律後果。同時，我們會盡力取得影像內的當事人同意，才使用有關影像。</p>
@@ -234,6 +250,21 @@
             <p>銀行轉帳</p>
             <p>788-551844-668 Wong Ho Yin, Choy Ki (恆生銀行)</p>
             <p>此戶口是由民權觀察成員王浩賢及鍵盤戰線成員蔡麒共同持有及管理，此戶口的所有款項只會用於「流動公義」的計劃。籌款數字會每星期至少向公眾公布一次，並每三個月一次向公眾公布計劃的財政報告及工作進展。</p>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+				<input type="hidden" name="cmd" value="_s-xclick">
+				<input type="hidden" name="hosted_button_id" value="8HHP3HC3N265C">
+				<table>
+				<tr><td><input type="hidden" name="on0" value="支持金額">支持金額</td></tr><tr><td><select name="os0">
+					<option value="金額 Amount">金額 Amount $100.00 HKD</option>
+					<option value="金額 Amount">金額 Amount $500.00 HKD</option>
+					<option value="金額 Amount">金額 Amount $1,000.00 HKD</option>
+				</select> </td></tr>
+				</table>
+				<input type="hidden" name="currency_code" value="HKD">
+				<input type="image" src="https://www.paypalobjects.com/zh_HK/HK/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal － 更安全、更簡單的網上付款方式！">
+				<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+			</form>
+            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JC7C8ERVYGFPC">EMAIL</a>
         </div>
     </div>
     
