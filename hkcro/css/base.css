@@ -6,7 +6,7 @@ body {
 
 }
 .box-container{
-    max-width: 880px;
+    max-width: 2000px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -53,7 +53,7 @@ h1{
 #header {
     background-color: #06083D;
     position: fixed;
-    max-width: 880px;
+    max-width: 2000px;
     margin: 0 auto;
     left: 0;
     right: 0;
@@ -122,4 +122,8 @@ ul li:before{
 
 .intro{
     margin-top: 132px;
+}
+
+.intro, .content, .remark {
+    margin: 0 10%;
 }
