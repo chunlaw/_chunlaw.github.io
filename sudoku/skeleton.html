@@ -1,0 +1,65 @@
+<head>
+</head>
+<body onload="solve()">
+</body>
+<script>
+  
+  var grid = [
+    [0, 0, 1, 0, 5, 9, 7, 0, 4],
+    [0, 0, 0, 0, 0, 0, 3, 0, 0],
+    [2, 0, 3, 0, 1, 0, 6, 0, 0],
+    [0, 0, 5, 7, 8, 0, 9, 1, 2],
+    [0, 2, 0, 4, 0, 3, 0, 6, 0],
+    [8, 6, 9, 0, 2, 1, 4, 0, 0],
+    [0, 0, 6, 0, 4, 0, 2, 0, 8],
+    [0, 0, 8, 0, 0, 0, 0, 0, 0],
+    [4, 0, 2, 6, 3, 0, 1, 0, 0]
+  ];
+
+  // check current state valid
+  // return false if any row/column/square is invalid, else true
+  function isValidGrid ( grid ) {
+    // TODO check row
+
+    // TODO check column
+
+    // TODO check square
+
+    // return ture if all pass
+    return true;
+  }
+
+
+  // exhaustion by recursion // https://en.wikipedia.org/wiki/Recursion_(computer_science)
+  // @ grid as the input of the grid
+  // @ k as the coordinate of exhausting cell
+  // @ return true if solution exists
+  function exhaust ( grid, k ) {
+    // define base case
+    if ( k == 81 ) { 
+      printGrid ( grid );
+      return true; // all cell exhausted
+    }
+    
+    // skip filled cell
+
+    // TODO iterate each digit for k-th cell, and exhaust next cell if the grid is still valid
+
+    // TODO reset the k-th cell
+
+    // TODO return false if no solution
+    return false;
+  }
+
+  function solve(){
+    exhaust(grid,0);
+  }
+
+
+  // debug use
+  function printGrid( grid ) {
+    for ( var i=0;i<9;++i ) {
+      console.log(grid[i][0], grid[i][1], grid[i][2], grid[i][3], grid[i][4], grid[i][5], grid[i][6], grid[i][7], grid[i][8]);
+    }
+  }
+</script>
