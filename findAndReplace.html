@@ -22,7 +22,7 @@
 function httpGet(theUrl)
 {
     var client = new XMLHttpRequest();
-    client.open('GET', 'http://chunlaw.github.io/genericFrPair.list');
+    client.open('GET', 'http://chunlaw.github.io/gallery/genericFrPair.list');
     client.onreadystatechange = function() {
           alert(client.responseText);
     }
@@ -69,7 +69,7 @@ Repeat ＊,＃　＃,＃
 字表：<br/>
 <textarea id='pairs' style="min-height:212px;width:70%"></textarea><br/>
 字表 Link:<br/>
-<input type="text" id='frPairUrl' value='http://chunlaw.github.io/genericFrPair.list' style="width: 70%"/>
+<input type="text" id='frPairUrl' value='http://chunlaw.github.io/gallery/genericFrPair.list' style="width: 70%"/>
 </div>
 <br/>
 <button id="runButton">Find and Replace</button>
