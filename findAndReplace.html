@@ -1,91 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>校讎足下</title>
+<!DOCTYPE html>  
+<html>  
   
-    <link href="css/tooltip.css" rel="stylesheet" type="text/css" />
-    <script src="js/tooltip.js" type="text/javascript"></script>
-    <script src="js/copywriter.js" type="text/javascript"></script>
+<head>  
+    <title>HTML Redirect</title>  
+    <meta http-equiv="refresh"
+        content="5; url = https://chunlaw.github.io/copywriter/" />  
+</head>  
   
-  <style type='text/css'>
-    span.highlight {
-        background-color: yellow;
-        height: 20px;
-    }
-    p {
-        min-height: 10px;
-    }
-  </style>
-
-<script type='text/javascript'>
-function httpGet(theUrl)
-{
-    var client = new XMLHttpRequest();
-    client.open('GET', 'http://chunlaw.github.io/gallery/genericFrPair.list');
-    client.onreadystatechange = function() {
-          alert(client.responseText);
-    }
-    client.send();
-}
-window.onload=function(){
-    document.getElementById('pairs').placeholder = '用法：\n一行行輸入要編校的詞語、置換成的詞語及簡單備考\n分別以「|」( Shift + \\ ) 分隔\n\n例子：\n滄海一栗|滄海一粟|大海裏的一粒穀子。比喻非常渺小';
-    document.getElementById('runButton').onclick = function () { return findAndReplace('cp_input', 'cp_output', 'pairs', 'frPairUrl', 'txt'); } ;
-    document.getElementById('runButton').onclick('cp_input', 'cp_output', 'pairs', 'frPairUrl', 'txt');
-}
-</script>
-
-<body style="padding: 0px 10px">
-  <h1 style="text-align:center">校讎足下</h1>
-<br/><br/>
-<div style="display:inline-block; width:45%; min-height:265px">
-文本：<br/><textarea id="txt" style="height:80px;width:90%;min-height:250px">作詞：林夕
-作曲：林健華(Black Box)
-編曲：Lorn Leber
-監製：Jim Lee
-
-在一起看每齣戲　在一起嘆每口氣　再細嘗　同偕到老的況味
-每分鐘也抱緊你　沒有一秒共你別離　還攜手看著生與死
-
-＊坐著臥著都分享　日日夜夜也為彼此設想
-　站著望著都分享　就在夢內發掘這真相
-
-＃除非你是我　才可與我常在　一個人　從鏡內發展恩愛
-更多更詳盡歌詞 在 ※ Mojim.com　魔鏡歌詞網 
-　除非你是我　才可晝夜同在　戀不來　從厭倦裡面偷取恨愛
-
-在一起與你工作　在一起與你摸索　兩個人　同時佔有的快樂
-每分鐘與你揮霍　沒有一秒沒我在旁　還攜手看著天空黑與光
-
-Repeat ＊,＃　＃,＃
-
-在一起　會有多美
-在一起　也會不美
-一個人　同偕到老不靠運氣</textarea>
-</div>
-<div style="display:inline-block;width:45%; min-height:265px">
-<br/>
-字表：<br/>
-<textarea id='pairs' style="min-height:212px;width:70%"></textarea><br/>
-字表 Link:<br/>
-<input type="text" id='frPairUrl' value='http://chunlaw.github.io/gallery/genericFrPair.list' style="width: 70%"/>
-</div>
-<br/>
-<button id="runButton">Find and Replace</button>
-<br/>
-<div>
-    <div style="display:inline-block; width: 45%">
-        <div>文本</div>
-        <div id="cp_input" style="border-style: solid;display:inline-block;width:99%"></div>
-    </div>
-    <div style="display:inline-block; width: 45%">
-        <div>校本</div>
-        <div id="cp_output"  style="border-style: solid;display:inline-block;width:99%"></div>
-    </div>
-</div>
-<br/>
+<body>  
+    <h1 style="text-align:center;color:green;">  
+         GeeksforGeeks  
+    </h1>  
+      
+    <p style="text-align:center;">  
+        If your browser supports Refresh,  
+        you'll be redirected to GeeksforGeeks  
+        Homepage, in 5 seconds.  
+    </p>  
+</body>  
   
-</body>
-
-</html>
-
+</html>  
